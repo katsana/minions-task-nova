@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class TaskResource extends Resource
 {
@@ -117,5 +118,27 @@ class TaskResource extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    /**
+     * Determine if the user can add / associate models of the given type to the resource.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model|string  $model
+     * @return bool
+     */
+    public function authorizedToAdd(NovaRequest $request, $model)
+    {
+        return false;
+    }
+
+    /**
+     * Determine if the current user can delete the given resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return bool
+     */
+    public function authorizedToDelete(Request $request)
+    {
+        return false;
     }
 }
