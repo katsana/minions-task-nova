@@ -1,0 +1,25 @@
+{
+    "name": "katsana/minions-task-nova",
+    "description": "Minions Task Manager for Laravel Nova",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Minions\\Task\\Nova\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "illuminate/contracts": "^6.0"
+    },
+    "require-dev": {
+        "katsana/minions": "^1.2"
+    },
+    "minimum-stability": "dev"
+}
