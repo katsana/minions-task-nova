@@ -16,7 +16,8 @@
     },
     "require": {
         "php": ">=7.2",
-        "illuminate/contracts": "^6.0"
+        "illuminate/contracts": "^6.0",
+        "katsana/minions-task": "^1.0"
     },
     "require-dev": {
         "katsana/minions": "^1.2"
