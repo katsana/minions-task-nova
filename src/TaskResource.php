@@ -9,7 +9,6 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
 class TaskResource extends Resource
@@ -122,13 +121,11 @@ class TaskResource extends Resource
     }
 
     /**
-     * Determine if the user can add / associate models of the given type to the resource.
-     *
-     * @param \Illuminate\Database\Eloquent\Model|string $model
+     * Determine if the current user can create new resources.
      *
      * @return bool
      */
-    public function authorizedToAdd(NovaRequest $request, $model)
+    public static function authorizedToCreate(Request $request)
     {
         return false;
     }
