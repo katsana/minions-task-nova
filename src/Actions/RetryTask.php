@@ -52,7 +52,7 @@ class RetryTask extends Action
      */
     public function uriKey()
     {
-        return "minions-retry-task";
+        return 'minions-retry-task';
     }
 
     /**

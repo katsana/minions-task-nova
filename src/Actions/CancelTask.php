@@ -53,7 +53,7 @@ class CancelTask extends Action
      */
     public function uriKey()
     {
-        return "minions-cancel-task";
+        return 'minions-cancel-task';
     }
 
     /**

@@ -138,13 +138,13 @@ class TaskResource extends Resource
     public function authorizedToUpdate(Request $request)
     {
         if ($request->action) {
-            switch($request->action) {
+            switch ($request->action) {
                 case 'minions-retry-task':
                     return $this->authorizedToRunRetryTaskAction($request);
                 case 'minions-cancel-task':
                     return $this->authorizedToRunCancelTaskAction($request);
                 default:
-                    return $this->authorizedToRunAnyAction($request)
+                    return $this->authorizedToRunAnyAction($request);
             }
         }
 
@@ -160,7 +160,6 @@ class TaskResource extends Resource
     {
         return false;
     }
-
 
     /**
      * Determine if current user can run any action.
