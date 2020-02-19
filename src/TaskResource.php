@@ -131,11 +131,63 @@ class TaskResource extends Resource
     }
 
     /**
+     * Determine if the current user can update the given resource.
+     *
+     * @return bool
+     */
+    public function authorizedToUpdate(Request $request)
+    {
+        if ($request->action) {
+            switch($request->action) {
+                case 'minions-retry-task':
+                    return $this->authorizedToRunRetryTaskAction($request);
+                case 'minions-cancel-task':
+                    return $this->authorizedToRunCancelTaskAction($request);
+                default:
+                    return $this->authorizedToRunAnyAction($request)
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Determine if the current user can delete the given resource.
      *
      * @return bool
      */
     public function authorizedToDelete(Request $request)
+    {
+        return false;
+    }
+
+
+    /**
+     * Determine if current user can run any action.
+     *
+     * @return bool
+     */
+    protected function authorizedToRunAnyAction(Request $request)
+    {
+        return false;
+    }
+
+    /**
+     * Determine if current user can run "cancel task" action.
+     *
+     * @return bool
+     */
+    protected function authorizedToRunCancelTaskAction(Request $request)
+    {
+        return false;
+    }
+
+    /**
+     * Determine if current user can run "retry task" action.
+     *
+     * @return bool
+     */
+    protected function authorizedToRunRetryTaskAction(Request $request)
     {
         return false;
     }

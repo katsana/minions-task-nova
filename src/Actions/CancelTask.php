@@ -47,6 +47,16 @@ class CancelTask extends Action
     }
 
     /**
+     * Get the URI key for the action.
+     *
+     * @return string
+     */
+    public function uriKey()
+    {
+        return "minions-cancel-task";
+    }
+
+    /**
      * Get the fields available on the action.
      *
      * @return array
